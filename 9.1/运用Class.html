@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 运用Class</title>
+</head>
+
+<body>
+<script src="../assets/jquey.js"></script>
+    <script src="../assets/underscore.js"></script>
+    <script src="quintus.js"></script>
+    <script>
+    /*对象1*/
+    var Person = Class.extend({
+        init: function() {
+            console.log("Created Person");
+        },
+        speak: function() {
+            console.log("Peron speaking:");
+        }
+    })
+    var p = new Person();
+    p.speak();
+
+    /*对象2*/
+    var Guy = Person.extend({
+        init: function() {
+            this._super();
+            console.log("Created Guy")
+        },
+        speak: function() {
+            this._super();
+            console.log("I'm a Guy!")
+        }
+    })
+    var bob = new Guy();
+    bob.speak();
+
+
+    /*对象3*/
+    var Girl = Person.extend({
+        init: function() {
+            console.log("Created Girl")
+        },
+        speak: function() {
+            console.log("I'm a Girl!")
+        }
+    })
+
+    var jill=new Girl();
+    jill.speak();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试游戏循环</title>
+    <script src="../assets/jquey.js"></script>
+    <script src="../assets/underscore.js"></script>
+    <script src="quintus.js"></script>
+</head>
+
+<body>
+    <div id="timer">0</div>
+    <div id="fps"></div>
+    <button id="pause">pause</button>
+    <button id="unpause">unpause</button>
+    <script>
+    var TimeTest = Quintus();
+    console.log(TimeTest)
+    var totalFrames = 0;
+    var totalTime = 0;
+    TimeTest.gameLoop(function(dt) {
+
+        dt = dt > 0 ? dt : 0;
+        totalTime += dt;
+
+
+        totalFrames += 1;
+
+        $("#timer").text(Math.round(totalTime * 1000) + " MS");
+        $("#fps").text(Math.round((totalFrames / totalTime)) + " FPS");
+
+    })
+    $("#pause").on("click", TimeTest.pauseGame);
+    $("#unpause").on("click", TimeTest.unpauseGame);
+    console.log(TimeTest.pauseGame)
+    </script>
+</body>
+
+</html>
