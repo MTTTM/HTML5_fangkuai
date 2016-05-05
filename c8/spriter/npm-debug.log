@@ -1,108 +1,98 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/Users/lukangyong/.nvm/v0.10.6/bin/node',
 1 verbose cli   '/Users/lukangyong/.nvm/v0.10.6/bin/npm',
-1 verbose cli   'link' ]
+1 verbose cli   'install',
+1 verbose cli   'grunt-node-inspector' ]
 2 info using npm@1.2.18
 3 info using node@v0.10.6
-4 verbose linkPkg /Users/lukangyong/Public/word/html_game/c8/spriter
-5 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/package.json
-6 warn package.json spriter@0.0.1 No README.md file found!
-7 verbose link build target /Users/lukangyong/.nvm/v0.10.6/lib/node_modules/spriter
-8 verbose install where,what [ '/Users/lukangyong/Public/word/html_game/c8/spriter', [] ]
-9 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/package.json
-10 verbose readDependencies using package.json deps
-11 verbose install where, deps [ '/Users/lukangyong/Public/word/html_game/c8/spriter',
-11 verbose install   [ 'canvas', 'futures', 'node-pre-gyp', 'grunt-node-inspector' ] ]
-12 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/package.json
-13 info preinstall spriter@0.0.1
-14 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/brew/package.json
-15 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/canvas/package.json
-16 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/futures/package.json
-17 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/grunt/package.json
-18 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/grunt-node-inspector/package.json
-19 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/node-pre-gyp/package.json
-20 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/sqlite3/package.json
-21 warn package.json futures@2.3.1 No README.md file found!
-22 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/package.json
-23 verbose readDependencies using package.json deps
-24 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/brew/package.json
-25 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/canvas/package.json
-26 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/futures/package.json
-27 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/grunt/package.json
-28 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/grunt-node-inspector/package.json
-29 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/node-pre-gyp/package.json
-30 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/sqlite3/package.json
-31 verbose already installed skipping canvas@1.3.12 /Users/lukangyong/Public/word/html_game/c8/spriter
-32 verbose already installed skipping futures@2.3.1 /Users/lukangyong/Public/word/html_game/c8/spriter
-33 verbose already installed skipping node-pre-gyp@0.6.27 /Users/lukangyong/Public/word/html_game/c8/spriter
-34 verbose cache add [ 'grunt-node-inspector@^0.4.1', null ]
-35 verbose cache add name=undefined spec="grunt-node-inspector@^0.4.1" args=["grunt-node-inspector@^0.4.1",null]
-36 verbose parsed url { protocol: null,
-36 verbose parsed url   slashes: null,
-36 verbose parsed url   auth: null,
-36 verbose parsed url   host: null,
-36 verbose parsed url   port: null,
-36 verbose parsed url   hostname: null,
-36 verbose parsed url   hash: null,
-36 verbose parsed url   search: null,
-36 verbose parsed url   query: null,
-36 verbose parsed url   pathname: 'grunt-node-inspector@^0.4.1',
-36 verbose parsed url   path: 'grunt-node-inspector@^0.4.1',
-36 verbose parsed url   href: 'grunt-node-inspector@^0.4.1' }
-37 verbose cache add name="grunt-node-inspector" spec="^0.4.1" args=["grunt-node-inspector","^0.4.1"]
-38 verbose parsed url { protocol: null,
-38 verbose parsed url   slashes: null,
-38 verbose parsed url   auth: null,
-38 verbose parsed url   host: null,
-38 verbose parsed url   port: null,
-38 verbose parsed url   hostname: null,
-38 verbose parsed url   hash: null,
-38 verbose parsed url   search: null,
-38 verbose parsed url   query: null,
-38 verbose parsed url   pathname: '^0.4.1',
-38 verbose parsed url   path: '^0.4.1',
-38 verbose parsed url   href: '^0.4.1' }
-39 verbose addNamed [ 'grunt-node-inspector', '^0.4.1' ]
-40 verbose addNamed [ null, null ]
-41 silly lockFile dc9a701f-grunt-node-inspector-0-4-1 grunt-node-inspector@^0.4.1
-42 verbose lock grunt-node-inspector@^0.4.1 /Users/lukangyong/.npm/dc9a701f-grunt-node-inspector-0-4-1.lock
-43 info addNameTag [ 'grunt-node-inspector', '^0.4.1' ]
-44 verbose url raw grunt-node-inspector
-45 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-node-inspector' ]
-46 verbose url resolved https://registry.npmjs.org/grunt-node-inspector
-47 info trying registry request attempt 1 at 21:40:26
-48 verbose etag "5CKZXN4WUS8VSGZAPUWS0H9N8"
-49 http GET https://registry.npmjs.org/grunt-node-inspector
-50 http 304 https://registry.npmjs.org/grunt-node-inspector
-51 silly registry.get cb [ 304,
-51 silly registry.get   { date: 'Wed, 04 May 2016 13:40:27 GMT',
-51 silly registry.get     via: '1.1 varnish',
-51 silly registry.get     'cache-control': 'max-age=300',
-51 silly registry.get     etag: '"5CKZXN4WUS8VSGZAPUWS0H9N8"',
-51 silly registry.get     age: '0',
-51 silly registry.get     connection: 'keep-alive',
-51 silly registry.get     'x-served-by': 'cache-nrt6126-NRT',
-51 silly registry.get     'x-cache': 'MISS',
-51 silly registry.get     'x-cache-hits': '0',
-51 silly registry.get     'x-timer': 'S1462369227.000178,VS0,VE184',
-51 silly registry.get     vary: 'Accept-Encoding' } ]
-52 verbose etag grunt-node-inspector from cache
-53 silly lockFile dc9a701f-grunt-node-inspector-0-4-1 grunt-node-inspector@^0.4.1
-54 silly lockFile dc9a701f-grunt-node-inspector-0-4-1 grunt-node-inspector@^0.4.1
-55 error Error: No compatible version found: grunt-node-inspector@'^0.4.1'
-55 error Valid install targets:
-55 error ["0.0.1","0.1.0","0.1.1","0.1.2","0.1.3","0.1.5","0.1.6","0.2.0","0.3.0","0.4.0","0.4.1"]
-55 error     at installTargetsError (/Users/lukangyong/.nvm/v0.10.6/lib/node_modules/npm/lib/cache.js:685:10)
-55 error     at /Users/lukangyong/.nvm/v0.10.6/lib/node_modules/npm/lib/cache.js:607:10
-55 error     at saved (/Users/lukangyong/.nvm/v0.10.6/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
-55 error     at Object.oncomplete (fs.js:107:15)
-56 error If you need help, you may report this log at:
-56 error     <http://github.com/isaacs/npm/issues>
-56 error or email it to:
-56 error     <npm-@googlegroups.com>
-57 error System Darwin 15.2.0
-58 error command "/Users/lukangyong/.nvm/v0.10.6/bin/node" "/Users/lukangyong/.nvm/v0.10.6/bin/npm" "link"
-59 error cwd /Users/lukangyong/Public/word/html_game/c8/spriter
-60 error node -v v0.10.6
-61 error npm -v 1.2.18
-62 verbose exit [ 1, true ]
+4 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/package.json
+5 warn package.json spriter@0.0.1 No README.md file found!
+6 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/brew/package.json
+7 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/canvas/package.json
+8 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/futures/package.json
+9 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/grunt/package.json
+10 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/grunt-node-inspector/package.json
+11 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/node-pre-gyp/package.json
+12 verbose read json /Users/lukangyong/Public/word/html_game/c8/spriter/node_modules/sqlite3/package.json
+13 warn package.json futures@2.3.1 No README.md file found!
+14 verbose from cache /Users/lukangyong/Public/word/html_game/c8/spriter/package.json
+15 verbose readDependencies using package.json deps
+16 verbose cache add [ 'grunt-node-inspector@^0.4.1', null ]
+17 verbose cache add name=undefined spec="grunt-node-inspector@^0.4.1" args=["grunt-node-inspector@^0.4.1",null]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'grunt-node-inspector@^0.4.1',
+18 verbose parsed url   path: 'grunt-node-inspector@^0.4.1',
+18 verbose parsed url   href: 'grunt-node-inspector@^0.4.1' }
+19 verbose cache add name="grunt-node-inspector" spec="^0.4.1" args=["grunt-node-inspector","^0.4.1"]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: '^0.4.1',
+20 verbose parsed url   path: '^0.4.1',
+20 verbose parsed url   href: '^0.4.1' }
+21 verbose addNamed [ 'grunt-node-inspector', '^0.4.1' ]
+22 verbose addNamed [ null, null ]
+23 silly lockFile dc9a701f-grunt-node-inspector-0-4-1 grunt-node-inspector@^0.4.1
+24 verbose lock grunt-node-inspector@^0.4.1 /Users/lukangyong/.npm/dc9a701f-grunt-node-inspector-0-4-1.lock
+25 info addNameTag [ 'grunt-node-inspector', '^0.4.1' ]
+26 verbose url raw grunt-node-inspector
+27 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-node-inspector' ]
+28 verbose url resolved https://registry.npmjs.org/grunt-node-inspector
+29 info trying registry request attempt 1 at 01:17:52
+30 verbose etag "5CKZXN4WUS8VSGZAPUWS0H9N8"
+31 http GET https://registry.npmjs.org/grunt-node-inspector
+32 info retry will retry, error on last attempt: Error: read ECONNRESET
+33 info trying registry request attempt 2 at 01:18:06
+34 verbose etag "5CKZXN4WUS8VSGZAPUWS0H9N8"
+35 http GET https://registry.npmjs.org/grunt-node-inspector
+36 info retry will retry, error on last attempt: Error: read ECONNRESET
+37 info trying registry request attempt 3 at 01:19:08
+38 verbose etag "5CKZXN4WUS8VSGZAPUWS0H9N8"
+39 http GET https://registry.npmjs.org/grunt-node-inspector
+40 http 304 https://registry.npmjs.org/grunt-node-inspector
+41 silly registry.get cb [ 304,
+41 silly registry.get   { date: 'Wed, 04 May 2016 17:19:09 GMT',
+41 silly registry.get     via: '1.1 varnish',
+41 silly registry.get     'cache-control': 'max-age=300',
+41 silly registry.get     etag: '"5CKZXN4WUS8VSGZAPUWS0H9N8"',
+41 silly registry.get     age: '0',
+41 silly registry.get     connection: 'keep-alive',
+41 silly registry.get     'x-served-by': 'cache-fra1227-FRA',
+41 silly registry.get     'x-cache': 'MISS',
+41 silly registry.get     'x-cache-hits': '0',
+41 silly registry.get     'x-timer': 'S1462382349.019279,VS0,VE515',
+41 silly registry.get     vary: 'Accept-Encoding' } ]
+42 verbose etag grunt-node-inspector from cache
+43 silly lockFile dc9a701f-grunt-node-inspector-0-4-1 grunt-node-inspector@^0.4.1
+44 silly lockFile dc9a701f-grunt-node-inspector-0-4-1 grunt-node-inspector@^0.4.1
+45 error Error: No compatible version found: grunt-node-inspector@'^0.4.1'
+45 error Valid install targets:
+45 error ["0.0.1","0.1.0","0.1.1","0.1.2","0.1.3","0.1.5","0.1.6","0.2.0","0.3.0","0.4.0","0.4.1"]
+45 error     at installTargetsError (/Users/lukangyong/.nvm/v0.10.6/lib/node_modules/npm/lib/cache.js:685:10)
+45 error     at /Users/lukangyong/.nvm/v0.10.6/lib/node_modules/npm/lib/cache.js:607:10
+45 error     at saved (/Users/lukangyong/.nvm/v0.10.6/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
+45 error     at Object.oncomplete (fs.js:107:15)
+46 error If you need help, you may report this log at:
+46 error     <http://github.com/isaacs/npm/issues>
+46 error or email it to:
+46 error     <npm-@googlegroups.com>
+47 error System Darwin 15.2.0
+48 error command "/Users/lukangyong/.nvm/v0.10.6/bin/node" "/Users/lukangyong/.nvm/v0.10.6/bin/npm" "install" "grunt-node-inspector"
+49 error cwd /Users/lukangyong/Public/word/html_game/c8/spriter
+50 error node -v v0.10.6
+51 error npm -v 1.2.18
+52 verbose exit [ 1, true ]
