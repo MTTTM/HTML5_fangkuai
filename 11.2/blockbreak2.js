@@ -93,10 +93,11 @@ $(function() {
         Q.POWSER--;
         var level="game"+Q.LEVEL;
        // this.destroy();
-        
+       console.log("这里不知道为什么在小球掉落的时候回运行很多次");
+         console.log(Q.POWSER)
           
         if(Q.POWSER<=0){
-          console.log(Q.POWSER)
+         
           Q.POWSER=3;
 
           Q.stageScene(level);
