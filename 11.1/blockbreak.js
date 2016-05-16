@@ -37,7 +37,7 @@ $(function() {
         this.p.x = Q.width - this.p.w;
       }
 
-      this._super(dt);
+     // this._super(dt);
     }
 
   });

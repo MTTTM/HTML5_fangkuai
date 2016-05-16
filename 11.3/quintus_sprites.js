@@ -23,9 +23,11 @@ Quintus.Sprites = function(Q) {
         },options);
       this.cols = this.cols || 
                   Math.floor(this.w / this.tilew);
+                  console.log(this.w)
     },
 
     fx: function(frame) {
+
       return (frame % this.cols) * this.tilew + this.sx;
     },
 
@@ -56,9 +58,7 @@ Quintus.Sprites = function(Q) {
   };
 
   Q.compileSheets = function(imageAsset,spriteDataAsset) {
-    console.log(spriteDataAsset)
     var data = Q.asset(spriteDataAsset);
-    console.log(data);
     _(data).each(function(spriteData,name) {
       Q.sheet(name,imageAsset,spriteData);
     });

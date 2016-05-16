@@ -14,14 +14,14 @@
     /*对象1*/
     var Person = Class.extend({
         init: function() {
-            console.log("Created Person");
+            console.log("Created Person:");
         },
         speak: function() {
             console.log("Peron speaking:");
         }
     })
-    var p = new Person();
-    p.speak();
+    // var p = new Person();
+    // p.speak();
 
     /*对象2*/
     var Guy = Person.extend({
@@ -34,22 +34,35 @@
             console.log("I'm a Guy!")
         }
     })
-    var bob = new Guy();
-    bob.speak();
+    // var bob = new Guy();
+    // bob.speak();
+      /*对象2*/
+    var Guy2 = Guy.extend({
+        init: function() {
+            this._super();
+            console.log("Created Guy22")
+        },
+        speak: function() {
+            this._super();
+            console.log("I'm a Guy!22")
+        }
+    })
+    var bob2 = new Guy2();
+    bob2.speak();
 
 
     /*对象3*/
-    var Girl = Person.extend({
-        init: function() {
-            console.log("Created Girl")
-        },
-        speak: function() {
-            console.log("I'm a Girl!")
-        }
-    })
+    // var Girl = Person.extend({
+    //     init: function() {
+    //         console.log("Created Girl")
+    //     },
+    //     speak: function() {
+    //         console.log("I'm a Girl!")
+    //     }
+    // })
 
-    var jill=new Girl();
-    jill.speak();
+    // var jill=new Girl();
+    // jill.speak();
     </script>
 </body>
 

@@ -7,23 +7,14 @@ $(function() {
   Q.input.touchControls({ 
             controls:  [ ['left','<' ],[],[],[],['right','>' ] ]
           });
-  Q.LEVEL=1;
-  Q.POWSER=3;//生命
 
   Q.Paddle = Q.Sprite.extend({
-    init: function(props) {
+    init: function() {
       this._super({
         sheet: 'paddle',
         speed: 200,
         x: 0
       });
-
-      this._super(_({
-        sheet: 'paddle',
-        speed: 200,
-        x: 0
-      }).extend(props||{}));
-
       this.p.x = Q.width/2 - this.p.w/2;
       this.p.y = Q.height - this.p.h;
       if(Q.input.keypad.size) {
@@ -47,17 +38,13 @@ $(function() {
   });
 
   Q.Ball = Q.Sprite.extend({
-    init: function(props) {
-      // this._super({
-      //   sheet: 'ball',
-      //   speed: 200,
-      //   dx: 1,
-      //   dy: -1,
-      // });
-       this._super(_(props).extend({
+    init: function() {
+      this._super({
         sheet: 'ball',
+        speed: 200,
         dx: 1,
-        dy: -1}));
+        dy: -1,
+      });
       this.p.y = Q.height / 2 - this.p.h;
       this.p.x = Q.width / 2 + this.p.w / 2;
     },
@@ -88,21 +75,7 @@ $(function() {
         p.y = 0;
         p.dy = 1;
       } else if(p.y > Q.height) { 
-        p.y=Q.height;
-        console.log(p.y+"  -    "+Q.height)
-        Q.POWSER--;
-        var level="game"+Q.LEVEL;
-       // this.destroy();
-       console.log("这里不知道为什么在小球掉落的时候回运行很多次");
-         console.log(Q.POWSER)
-          
-        if(Q.POWSER<=0){
-         
-          Q.POWSER=3;
-
-          Q.stageScene(level);
-        }
-        
+        Q.stageScene('game');
       }
 
       this._super(dt);
@@ -122,20 +95,13 @@ $(function() {
       });
     }
   });
-  //计分
-    Q.count= Q.Sprite.extend({
-    init: function(props) {
-      this._super(_(props).extend({ sheet: 'count'}));
-        Q.stage().trigger('removeBlock');
-    }
-  });
 
-//level1
+
   Q.load(['blockbreak.png','blockbreak.json'], function() {
     Q.compileSheets('blockbreak.png','blockbreak.json');
-    Q.scene('game1',new Q.Scene(function(stage) {
+    Q.scene('game',new Q.Scene(function(stage) {
       stage.insert(new Q.Paddle());
-      stage.insert(new Q.Ball({speed: 200}));
+      stage.insert(new Q.Ball());
 
       var blockCount=0;
       for(var x=0;x<6;x++) {
@@ -147,60 +113,13 @@ $(function() {
       stage.bind('removeBlock',function() {
         blockCount--;
         if(blockCount == 0) {
-          Q.stageScene('game2');
-          Q.LEVEL=2;
+          Q.stageScene('game');
         }
       });
 
     }));
-    Q.LEVEL=1;
-    Q.stageScene('game1');
-
+    Q.stageScene('game');
   });
-  //level2
-   Q.scene('game2',new Q.Scene(function(stage) {
-      stage.insert(new Q.Paddle());
-      stage.insert(new Q.Ball({speed: 210}));
-
-      var blockCount=0;
-      for(var x=0;x<7;x++) {
-        for(var y=0;y<x;y++) {
-          stage.insert(new Q.Block({ x: (x*50+10)-(35*y), y: y*30+10 }));
-          blockCount++;
-        }
-      }
-      stage.bind('removeBlock',function() {
-        blockCount--;
-        if(blockCount == 0) {
-          Q.stageScene('game3');
-          Q.LEVEL=3;
-        }
-      });
-
-    }));
-  //level3
-   Q.scene('game3',new Q.Scene(function(stage) {
-      stage.insert(new Q.Paddle({speed: 230}));
-      stage.insert(new Q.Ball({speed: 230}));
-
-      var blockCount=0;
-      for(var x=0;x<3;x++) {
-        for(var y=0;y<5;y++) {
-          stage.insert(new Q.Block({ x: (x*50+10), y: y*30+10 }));
-          blockCount++;
-        }
-      }
-      stage.bind('removeBlock',function() {
-        blockCount--;
-        if(blockCount == 0) {
-          alert("YOU WIN!")
-          return false;
-          Q.stageScene('game3');
-        }
-      });
-
-    }));
-  //level4
 
 
 });

@@ -125,8 +125,11 @@ var Quintus = function(opts) {
 
   // Syntax for including other modules into quintus
   Q.include = function(mod) {
+    
     _.each(Q._normalizeArg(mod),function(m) {
+
       m = Quintus[m] || m;
+
       m(Q);
     });
     return Q;
@@ -227,10 +230,12 @@ var Quintus = function(opts) {
   Q.register = function(name,methods) {
     methods.name = name;
     Q.components[name] = Q.Component.extend(methods);
+
   };
 
   Q.Component = Q.Evented.extend({
     init: function(entity) {
+      console.log(entity)
       this.entity = entity;
       if(this.extend) _.extend(entity,this.extend);  
       entity[this.name] = this;
@@ -451,7 +456,6 @@ var Quintus = function(opts) {
 
   // Getter method to return an asset
   Q.asset = function(name) {
-    //console.log(name);
     return Q.assets[name];
   };
 
