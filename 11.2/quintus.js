@@ -125,8 +125,11 @@ var Quintus = function(opts) {
 
   // Syntax for including other modules into quintus
   Q.include = function(mod) {
+    
     _.each(Q._normalizeArg(mod),function(m) {
+
       m = Quintus[m] || m;
+
       m(Q);
     });
     return Q;

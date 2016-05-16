@@ -81,6 +81,7 @@
                 }, timeToCall);
 
                 lastTime = currTime + timeToCall;
+                console.log(timeToCall)
                 return id;
             }
             /*暂停游戏*/

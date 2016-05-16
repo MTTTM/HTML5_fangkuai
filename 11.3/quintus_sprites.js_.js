@@ -1,4 +1,4 @@
-Quintus.Sprites = function(Q) {
+Quintus.Sprite = function(Q) {
  
   // Create a new sprite sheet
   // Options:
@@ -56,71 +56,55 @@ Quintus.Sprites = function(Q) {
   };
 
   Q.compileSheets = function(imageAsset,spriteDataAsset) {
-    console.log(spriteDataAsset)
     var data = Q.asset(spriteDataAsset);
-    console.log(data);
     _(data).each(function(spriteData,name) {
       Q.sheet(name,imageAsset,spriteData);
     });
   };
+  //Sprite类
+Q.Sprite=Q.GameObject.extend({
+  init:function(props){
+    this.p=_({
+      x:0,
+      y:0,z:0,
+      frame:0,
+      type:0
+    }).extend(props||{});
 
-
-// Properties:
-  //    x
-  //    y
-  //    z - sort order
-  //    sheet or asset
-  //    frame
-  Q.Sprite = Q.GameObject.extend({
-    init: function(props) {
-      this.p = _({ 
-        x: 0,
-        y: 0,
-        z: 0,
-        frame: 0,
-        type: 0
-      }).extend(props||{});
-      if((!this.p.w || !this.p.h)) {
-        if(this.asset()) {
-          this.p.w = this.p.w || this.asset().width;
-          this.p.h = this.p.h || this.asset().height;
-        } else if(this.sheet()) {
-          this.p.w = this.p.w || this.sheet().tilew;
-          this.p.h = this.p.h || this.sheet().tileh;
-        }
+    if((!this.p.w||!this.p.h)){
+      if(this.asset()){
+        this.p.w=this.p.w||this.asset().width;
+        this.p.h=this.p.h||this.asset().height;
       }
-      this.p.id = this.p.id || _.uniqueId();
-    },
-
-    asset: function() {
-      return Q.asset(this.p.asset);
-    },
-
-    sheet: function() {
-      return Q.sheet(this.p.sheet);
-    },
-
-    draw: function(ctx) {
-      if(!ctx) { ctx = Q.ctx; }
-      var p = this.p;
-      if(p.sheet) {
-        this.sheet().draw(ctx, p.x, p.y, p.frame);
-      } else if(p.asset) {
-        ctx.drawImage(Q.asset(p.asset), 
-        Math.floor(p.x), 
-        Math.floor(p.y));
+      else if(this.sheet()){
+        this.p.w=this.p.w||this.sheet().tilew;
+        this.p.h=this.p.h||this.sheet().tileh;
       }
-      this.trigger('draw',ctx);
-    },
-
-    step: function(dt) {
-      this.trigger('step',dt);
     }
-  });
 
-
-
-
+    this.p.id=this.p.id||_.uniqueId();
+  },
+  asset:function(){
+    return Q.asset(this.p.asset);
+  },
+  sheet:function(){
+    return Q.sheet(this.p.sheet);
+  },
+  draw:function(ctx){
+    if(!ctx){ctx=Q.ctx;};
+    var p=this.p;
+    if(p.sheet){
+      this.sheet().draw(ctx.p.x,p.y,frame);
+    }
+    else if(p.asset){
+      ctx.draw(Q.asset(p.asset),Math.floor(p.x),Math.floor(p.y));
+    }
+    this.trigger("draw",ctx);
+  },
+  step:function(dt){
+    this.trigger("step",dt);
+  }
+});
   return Q;
 };
 
