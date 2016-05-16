@@ -319,6 +319,7 @@ $(function() {
       this.add('tiled, transition, healthbar');
       this.bind('interact',this,'interact');
       this.hide();
+      console.log(props)
     },
 
     interact: function(data) {

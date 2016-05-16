@@ -235,7 +235,6 @@ var Quintus = function(opts) {
 
   Q.Component = Q.Evented.extend({
     init: function(entity) {
-      console.log(entity)
       this.entity = entity;
       if(this.extend) _.extend(entity,this.extend);  
       entity[this.name] = this;
